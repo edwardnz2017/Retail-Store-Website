@@ -1,0 +1,24 @@
+main {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#home-photo {
+  height: 550px;
+  width: auto;
+  opacity: 1;
+}
+
+#desc-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 300px;
+  height: 300px;
+  font-size: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin-right: 100px;
+}
