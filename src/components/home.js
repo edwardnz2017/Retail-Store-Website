@@ -1,15 +1,15 @@
 import React from 'react';
 import '../css/home.css';
 import homePhoto from '../misc/home-photo.jpg';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
     <main>
-      <div id='desc-box'>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Eu sem integer vitae
-        justo eget magna.
-      </div>
+      <Link to='/shop' style={{ textDecoration: 'none' }}>
+        <div id='desc-box'>Shop Now</div>
+      </Link>
+
       <img id='home-photo' src={homePhoto} alt='' />
     </main>
   );
