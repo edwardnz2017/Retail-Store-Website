@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+#shopping-cart {
+  border: 1px red solid;
+  width: 930px;
+  float: right;
+  font-family: 'Lato', sans-serif;
+}
+
+#cart-button-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.cart-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px black solid;
+  width: 220px;
+  height: 50px;
+  margin: 10px;
+}
+
+.cart-buttons:hover {
+  background-color: black;
+  color: white;
+  transition: ease 0.3s;
+}

@@ -4,25 +4,26 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 25px;
+  font-size: 1.6em;
   height: 90px;
-  margin-bottom: 70px;
+  margin-bottom: 0px;
 }
 
-#header-main {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  border-bottom: 1px black solid;
-  width: 1000px;
-  font-family: 'Dosis', sans-serif;
-  font-weight: bold;
+@media (min-width: 828px) {
+  #header-main {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 1px black solid;
+    width: 80%;
+    font-family: 'Dosis', sans-serif;
+    font-weight: bold;
+  }
 }
 
 img {
   height: 29px;
   width: auto;
-  margin-right: 12px;
 }
 
 #cart-details {
@@ -49,17 +50,21 @@ li {
   text-decoration: none;
 }
 
+li:hover {
+  text-decoration: underline;
+}
+
 #icon {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 100px 200px 0 50px;
+  margin: 35% 200px 0 50px;
   font-size: 60px;
   color: white;
   text-decoration: none;
   border: 1px black solid;
-  height: 190px;
-  width: 190px;
+  height: 4em;
+  width: 4em;
   background-color: black;
   border-radius: 50%;
 }
