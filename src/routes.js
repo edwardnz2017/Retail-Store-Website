@@ -134,6 +134,7 @@ const Routes = () => {
       <Header cartNumber={cartItems.length} />
       <Switch>
         <Route exact path='/' component={Home} />
+        <Route exact path='/Retail-Store-Website' component={Home} />
         <Route exact path='/about' component={About} />
         <Route
           exact
