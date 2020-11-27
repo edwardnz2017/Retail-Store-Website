@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, HashRouter } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import Header from './components/header';
 import Home from './components/home';
@@ -130,11 +130,10 @@ const Routes = () => {
   };
 
   return (
-    <BrowserRouter>
+    <HashRouter basename='/'>
       <Header cartNumber={cartItems.length} />
       <Switch>
         <Route exact path='/' component={Home} />
-        <Route exact path='/Retail-Store-Website' component={Home} />
         <Route exact path='/about' component={About} />
         <Route
           exact
@@ -149,7 +148,7 @@ const Routes = () => {
           )}
         />
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
