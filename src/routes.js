@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 import Header from './components/header';
 import Home from './components/home';
 import About from './components/about';
@@ -15,7 +16,7 @@ import looka from './misc/shop-items/looka-mask.jpg';
 const Routes = () => {
   const [cartItems, setCartItems] = useState([]);
 
-  const [catalogue, setCatalogue] = useState([
+  const [catalogue] = useState([
     {
       name: 'Adidas Mask - White',
       id: 1,
@@ -60,6 +61,7 @@ const Routes = () => {
         ...cartItems,
         {
           name: 'Adidas Mask - White',
+          uniqueId: uuidv4(),
           id: 1,
           price: '30',
           image: <img src={adidas} alt='Adidas mask' />,
@@ -70,6 +72,7 @@ const Routes = () => {
         ...cartItems,
         {
           name: 'Assorted Masks - 3 Pack',
+          uniqueId: uuidv4(),
           id: 2,
           price: '18',
           image: <img src={assorted} alt='Assorted mask' />,
@@ -80,6 +83,7 @@ const Routes = () => {
         ...cartItems,
         {
           name: 'Puma Cloth Mask - Black',
+          uniqueId: uuidv4(),
           id: 3,
           price: '14',
           image: <img src={puma} alt='Puma mask' />,
@@ -90,6 +94,7 @@ const Routes = () => {
         ...cartItems,
         {
           name: 'Under Armor Sports Mask - Black',
+          uniqueId: uuidv4(),
           id: 4,
           price: '20',
           image: <img src={ua} alt='UnderArmor mask' />,
@@ -100,6 +105,7 @@ const Routes = () => {
         ...cartItems,
         {
           name: 'Hummel Mask - Pale Green',
+          uniqueId: uuidv4(),
           id: 5,
           price: '15',
           image: <img src={hummel} alt='Hummel mask' />,
@@ -110,12 +116,17 @@ const Routes = () => {
         ...cartItems,
         {
           name: 'Looka Cloth Mask - Navy',
+          uniqueId: uuidv4(),
           id: 6,
           price: '17',
           image: <img src={looka} alt='Looka mask' />,
         },
       ]);
     }
+  };
+
+  const deleteItem = (id) => {
+    setCartItems(cartItems.filter((item) => item.uniqueId !== id));
   };
 
   return (
@@ -132,7 +143,9 @@ const Routes = () => {
         <Route
           exact
           path='/shopping-cart'
-          component={() => <ShoppingCart cartItems={cartItems} />}
+          component={() => (
+            <ShoppingCart cartItems={cartItems} deleteItem={deleteItem} />
+          )}
         />
       </Switch>
     </BrowserRouter>
